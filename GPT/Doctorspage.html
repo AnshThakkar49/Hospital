@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctors | Hospital Website</title>
+<link rel="stylesheet" href="styles.css"> <!-- Link to your external stylesheet -->
+<style>
+/* General styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  background: linear-gradient(to right, #ffffff, #e3f2fd);
+  margin: 0;
+  padding: 0;
+}
+
+/* Top section */
+.top {
+  background-color: #0d47a1;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: right;
+  font-size: 0.9em;
+}
+
+.top a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.top a:hover {
+  text-decoration: underline;
+}
+
+/* Logo and navigation */
+.logo {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.logo img {
+  max-width: 1000px;
+  max-height: 1000px;
+  vertical-align: middle;
+}
+
+.logo h1 {
+  display: inline-block;
+  font-size: 2.5em;
+  margin-left: 20px;
+  vertical-align: middle;
+  color: #0d47a1;
+  font-weight: bold;
+}
+
+/* Middle section */
+.middle {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.middle p {
+  font-size: 1.5em;
+  color: #0d47a1;
+}
+
+/* Doctors section */
+.doctors-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.doctors-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.doctor {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.doctor img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 5px solid #0d47a1;
+}
+
+.doctor h3 {
+  margin: 10px 0 5px;
+  color: #0d47a1;
+  font-size: 1.5em;
+}
+
+.doctor p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Bottom section */
+.bottom, .bottom_up, .nav_down {
+  background-color: #0d47a1;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.bottom table, .bottom_up table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.bottom table td, .bottom_up table td {
+  padding: 10px;
+  color: #f4f4f4;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Top Section -->
+<div class="top">
+  <div>
+    Welcome to Our Hospital | <a href="Signinpage.html">Sign in</a> | <a href="SignUp.html">Sign Up</a>
+  </div>
+</div>
+
+<!-- Logo and Heading Section -->
+<div class="logo">
+  <img src="Logo (2).png" alt="Hospital Logo">
+</div>
+
+<!-- Middle Section -->
+<div class="middle">
+  <div>
+    <p>Providing Quality Healthcare</p>
+  </div>
+</div>
+
+<!-- Doctors Section -->
+<div class="doctors-section">
+  <h2>Our Doctors</h2>
+
+  <div class="doctors-grid">
+    <div class="doctor">
+      <img src="d1.jpeg" alt="Doctor 1" width="150" height="150">
+      <h3>Dr. John Doe</h3>
+      <p>Specialty: Cardiology</p>
+      <p>Experience: 15 years</p>
+      <p>Education: MD, PhD</p>
+    </div>
+
+    <div class="doctor">
+      <img src="d3.png" alt="Doctor 2" width="150" height="150">
+      <h3>Dr. Jane Smith</h3>
+      <p>Specialty: Neurology</p>
+      <p>Experience: 12 years</p>
+      <p>Education: MD, MSc</p>
+    </div>
+
+    <div class="doctor">
+      <img src="d2.jpeg" alt="Doctor 3" width="150" height="150">
+      <h3>Dr. Emily Johnson</h3>
+      <p>Specialty: Pediatrics</p>
+      <p>Experience: 10 years</p>
+      <p>Education: MD, MPH</p>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Section -->
+<div class="bottom">
+  <div>
+    <table>
+      <tr>
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu.</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu.</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu.</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- Bottom Up Section -->
+<div class="bottom_up">
+  <div>
+    <table>
+      <tr>
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu.</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu.</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu.</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<div class="nav_down">
+  <div>
+    &copy; 2024 Hospital Name. All rights reserved.
+  </div>
+</div>
+
+</body>
+</html>
