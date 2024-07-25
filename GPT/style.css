@@ -4,41 +4,56 @@
 }
 
 .top {
-  width: 100%;
-  background-color: #2FA5EB !important;
-  border-bottom: 2px solid #f0f0f0;
+  background-color: #2FA5EB;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: right;
+  font-size: 0.9em;
 }
 
-.top div {
-  width: 1200px;
+.top a {
   color: #fff;
-  background-color: #2FA5EB !important;
-  font-family: calibri;
-  padding: 10px;
-  text-align: right;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.top a:hover {
+  text-decoration: underline;
 }
 
 .logo {
-  width: 100%;
-  border-bottom: 2px solid #f0f0f0;
+  text-align: center;
+  margin: 40px 0;
 }
 
-.logo div {
-  width: 1200px;
-  font-family: calibri;
-  padding: 5px;
-  text-align: left;
+.logo img {
+  max-width: 150px;
+  vertical-align: middle;
 }
 
-.logo div table a {
-  padding: 10px;
+.logo h1 {
+  display: inline-block;
+  font-size: 2.5em;
+  margin-left: 20px;
+  vertical-align: middle;
+  color: #0d47a1;
+  font-weight: bold;
+}
+
+nav {
+  text-align: center;
+  margin-top: 20px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #0d47a1;
   text-decoration: none;
-  color: gray;
+  font-size: 1.2em;
 }
 
-.logo div table a:hover {
-  color: #428bca;
-  border-bottom: 2px solid gray;
+nav a:hover {
+  text-decoration: underline;
 }
 
 .middle {
