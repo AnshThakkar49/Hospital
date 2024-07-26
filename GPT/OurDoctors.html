@@ -7,6 +7,10 @@
 <link rel="stylesheet" href="styles.css">
 <style>
 /* General styles */
+* {
+  margin: auto;
+  padding: auto;
+}
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   color: #333;
@@ -34,40 +38,34 @@ body {
   text-decoration: underline;
 }
 
-/* Logo and navigation */
 .logo {
   text-align: center;
-  margin: 40px 0;
+  padding: 20px;
 }
 
 .logo img {
-  max-width: 150px;
+  width: 250px; /* Adjust the size as needed */
+  height: auto;
   vertical-align: middle;
 }
 
-.logo h1 {
-  display: inline-block;
-  font-size: 2.5em;
-  margin-left: 20px;
-  vertical-align: middle;
-  color: #0d47a1;
-  font-weight: bold;
+.logo table {
+  margin: 0 auto;
 }
 
-nav {
-  text-align: center;
-  margin-top: 20px;
+.logo table td {
+  padding: 10px;
 }
 
-nav a {
-  margin: 0 15px;
+.logo a {
   color: #0d47a1;
   text-decoration: none;
   font-size: 1.2em;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.logo a:hover {
+  color: #2FA5EB;
+  border-bottom: 2px solid #2FA5EB;
 }
 
 /* Middle section */
@@ -136,7 +134,7 @@ nav a:hover {
 }
 
 /* Bottom section */
-.bottom, .bottom_up, .nav_down {
+.bottom_up {
   background-color: #2FA5EB;
   color: #fff;
   padding: 20px;
@@ -144,36 +142,77 @@ nav a:hover {
   margin-top: 20px;
 }
 
-.bottom table, .bottom_up table {
+.bottom_up table {
   width: 100%;
   table-layout: fixed;
 }
 
-.bottom table td, .bottom_up table td {
+.bottom_up table td {
   padding: 10px;
   color: #f4f4f4;
+}
+.bottom {
+  width: 100%;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.bottom div {
+  width: 1200px;
+  color: #fff;
+  font-family: calibri;
+  text-align: right;
+}
+
+.bottom div table {
+  padding-top: 30px;
+  width: 1100px;
+  text-align: center;
+  color: gray;
+  font-size: 20px;
+}
+
+.nav_down {
+  width: 100%;
+  background-color: #2FA5EB !important;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.nav_down div {
+  width: 1200px;
+  color: #fff;
+  background-color: #000;
+  font-family: calibri;
+  padding: 10px;
+  text-align: left;
 }
 </style>
 </head>
 <body>
 
 <!-- Top Section -->
+<!-- Top Section -->
 <div class="top">
   <div>
+    <!-- Content in the top section -->
     Welcome to Our Hospital | <a href="SignIn.html">Sign in</a> | <a href="SignUp.html">Sign Up</a>
   </div>
 </div>
 
-<!-- Logo and Navigation -->
+<!-- Logo Section -->
 <div class="logo">
-  <img src="Logo (2).png" alt="Hospital Logo">
+  <div>
+    <!-- Logo and navigation links -->
+    <table>
+      <tr>
+        <td><img src="H_Logo.png" alt="Hospital Logo"></td>
+        <td><a href="index.html">Home</a></td>
+        <td><a href="Services.html">Services</a></td>
+        <td><a href="OurDoctors.html">Doctors</a></td>
+        <td><a href="ContactUs.html">Contact Us</a></td>
+      </tr>
+    </table>
+  </div>
 </div>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="#">Services</a>
-  <a href="OurDoctors.html">Doctors</a>
-  <a href="ContactUs.html">Contact Us</a>
-</nav>
 <!-- Doctors Section -->
 <div class="doctors-section">
   <h2>Our Doctors</h2>
@@ -205,25 +244,11 @@ nav a:hover {
   </div>
 </div>
 
-<!-- Bottom Section -->
-<div class="bottom">
-  <div>
-    <table>
-      <tr>
-        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu.</td>
-        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu.</td>
-        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu.</td>
-      </tr>
-    </table>
-  </div>
-</div>
-
 <!-- Footer Section -->
 <div class="nav_down">
   <div>
     &copy; 2024 Hospital Name. All rights reserved.
   </div>
 </div>
-
 </body>
 </html>
