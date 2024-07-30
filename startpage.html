@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Information | Hospital Website</title>
+<link rel="stylesheet" href="styles.css"> <!-- Link to your external stylesheet -->
+<style>
+/* General styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  background: linear-gradient(to right, #ffffff, #e3f2fd);
+  margin: 0;
+  padding: 0;
+}
+
+/* Top section */
+.top {
+  background-color: #0d47a1;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: right;
+  font-size: 0.9em;
+}
+
+.top a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.top a:hover {
+  text-decoration: underline;
+}
+
+/* Logo and navigation */
+.logo {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.logo img {
+  max-width: 500px;
+  vertical-align: middle;
+}
+
+.logo h1 {
+  display: inline-block;
+  font-size: 2.5em;
+  margin-left: 20px;
+  vertical-align: middle;
+  color: #0d47a1;
+  font-weight: bold;
+}
+
+/* Middle section */
+.middle {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.middle p {
+  font-size: 1.5em;
+  color: #0d47a1;
+}
+
+/* Form section */
+.form-section {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section label {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #0d47a1;
+}
+
+.form-section input, .form-section select {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-section select[multiple] {
+  height: auto;
+}
+
+.form-section button {
+  padding: 15px;
+  font-size: 1.2em;
+  background-color: #0d47a1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-section button:hover {
+  background-color: #0a3781;
+}
+
+/* Selected symptoms */
+.selected-symptoms {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Logo and Heading Section -->
+<div class="logo">
+  <img src="logo3.jpg" alt="Hospital Logo">
+</div>
+
+<!-- Middle Section -->
+<div class="middle">
+  <div>
+    <p>Providing Quality Healthcare</p>
+  </div>
+</div>
+
+<!-- Form Section -->
+<div class="form-section">
+  <h2>Patient Information</h2>
+  <form action="submit_form.html" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="sex">Sex:</label>
+    <select id="sex" name="sex" required>
+      <option value="">Select Sex</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="symptoms">Symptoms:</label>
+    <select id="symptoms" name="symptoms[]" multiple required onchange="updateSelectedSymptoms()">
+      <option value="fatigue">Fatigue</option>
+      <option value="weight_loss">Weight loss</option>
+      <option value="itching">Itching</option>
+      <option value="chills">Chills</option>
+      <option value="high_fever">High fever</option>
+      <option value="vomiting">Vomiting</option>
+      <option value="skin_rash">Skin rash</option>
+      <option value="continuous_sneezing">Continuous sneezing</option>
+      <option value="cough">Cough</option>
+      <option value="headache">Headache</option>
+      <option value="joint_pain">Joint pain</option>
+      <option value="lethargy">Lethargy</option>
+      <option value="sweating">Sweating</option>
+      <option value="nausea">Nausea</option>
+      <option value="red_spots_over_body">Red spots over body</option>
+      <option value="back_pain">Back pain</option>
+      <option value="malaise">Malaise</option>
+      <option value="redness_of_eye">Redness of eye</option>
+      <option value="sinus_pressure">Sinus pressure</option>
+      <option value="runny_nose">Runny nose</option>
+      <option value="muscle_pain">Muscle pain</option>
+      <option value="congestion">Congestion</option>
+      <option value="chest_pain">Chest pain</option>
+      <option value="loss_of_smell">Loss of smell</option>
+      <option value="irregular_sugar_level">Irregular sugar level</option>
+      <option value="blurred_vision">Blurred and distorted vision</option>
+      <option value="yellowish_skin">Yellowish skin</option>
+      <option value="restlessness">Restlessness</option>
+    </select>
+
+    <div class="selected-symptoms" id="selected-symptoms">
+      <strong>Selected Symptoms:</strong>
+      <ul id="symptoms-list"></ul>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+function updateSelectedSymptoms() {
+  var select = document.getElementById("symptoms");
+  var selected = Array.from(select.selectedOptions).map(option => option.text);
+  var symptomsList = document.getElementById("symptoms-list");
+  symptomsList.innerHTML = "";
+  selected.forEach(symptom => {
+    var li = document.createElement("li");
+    li.textContent = symptom;
+    symptomsList.appendChild(li);
+  });
+}
+</script>
+
+</body>
+</html>
